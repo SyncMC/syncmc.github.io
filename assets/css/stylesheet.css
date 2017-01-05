@@ -2,7 +2,7 @@ body {
 	padding: 1em;
 }
 
-div#background {
+body > div:first-child {
 	background: #120d19 url("../imgs/background.png") no-repeat;
 	background-size: 100% 100%;
 	height: 100%;
@@ -21,11 +21,11 @@ div.container {
 
 h1.display {
 	color: #70f;
-	font-family: "Fredoka One", cursive;
+	font-family: Audiowide, cursive;
 	font-size: 3em;
 	letter-spacing: 0.1em;
 	text-align: center;
-	text-shadow: 0.075em 0.075em 0.1em #90f;
+	text-shadow: 0.075em 0.075em 0.2em #90f;
 	transition: letter-spacing 1s;
 }
 
@@ -39,7 +39,7 @@ h1.display:hover {
 	}
 
 	h1.display:hover {
-		letter-spacing: 0.166em;
+		letter-spacing: 0.167em;
 	}
 }
 
@@ -55,18 +55,18 @@ h1.display:hover {
 
 h1.display span {
 	color: #90f;
-	text-shadow: 0.075em 0.075em 0.1em #70f;
+	text-shadow: 0.075em 0.075em 0.2em #70f;
 }
 
 div.row {
 	margin: 0 auto;
 }
 
-div.row#desc {
+div.container > div.row {
 	max-width: 60em;
 }
 
-div.row#desc div.col-sm-3 {
+div.container > div.row div.col-sm-3 {
 	color: #a0f;
 	font-family: "Indie Flower", sans-serif;
 	font-size: 1.3em;
@@ -74,26 +74,26 @@ div.row#desc div.col-sm-3 {
 	transition: font-size 1s;
 }
 
-div.row#desc div.col-sm-3:hover {
+div.container > div.row div.col-sm-3:hover {
 	font-size: 1.5em;
 }
 
 @media only screen and (min-width: 576px) {
-	div.row#desc div.col-sm-3 {
+	div.container > div.row div.col-sm-3 {
 		font-size: 1.4em;
 	}
 
-	div.row#desc div.col-sm-3:hover {
+	div.container > div.row div.col-sm-3:hover {
 		font-size: 1.6em;
 	}
 }
 
 @media only screen and (min-width: 768px) {
-	div.row#desc div.col-sm-3 {
+	div.container > div.row div.col-sm-3 {
 		font-size: 1.5em;
 	}
 
-	div.row#desc div.col-sm-3:hover {
+	div.container > div.row div.col-sm-3:hover {
 		font-size: 1.7em;
 	}
 }
@@ -107,57 +107,66 @@ h1:not(.display) {
 	font-family: "Sigmar One", cursive;
 }
 
-div.row#about div.col-xs-6.vr-right {
+div.container > div > div.row div.col-xs-6.vr-right {
 	border-right: 1px solid #52a;
 	padding-right: 5%;
 	text-align: right;
 }
 
-div.row#about div.col-xs-6:not(.vr-right) {
+div.container > div > div.row div.col-xs-6.vr-left {
+	border-left: 1px solid #52a;
+	margin-left: -0.05em;
 	padding-left: 5%;
 }
 
-p {
+p, a {
 	color: #a7f;
-	font-family: "Open Sans", sans-serif;
+	font-family: Comfortaa, sans-serif;
 	font-size: 1.1em;
 	line-height: 1.618em;
 }
 
-div#projects div.list-group {
+div.container > div > div.list-group {
 	margin: 0 auto;
 	max-width: 50em;
 	text-align: center;
 }
 
-a.list-group-item.list-group-item-action, a {
-	color: #85d;
-	font-family: "Open Sans", sans-serif;
+a {
+	color: #85d !important;
 }
 
-a.list-group-item.list-group-item-action {
+div.container > div > div.list-group a.list-group-item.list-group-item-action {
 	background-color: #212;
 	border-color: #767;
 }
 
-a.list-group-item.list-group-item-action:hover, a.list-group-item.list-group-item-action:focus, a:hover, a:focus {
-    color: #a7f;
-    text-decoration: none;
+a:hover, a:focus {
+    color: #a7f !important;
+    text-decoration: none !important;
 }
 
-a.list-group-item.list-group-item-action:hover {
+div.container > div > div.list-group a.list-group-item.list-group-item-action:hover {
 	background-color: #323;
 	border-color: #878;
 }
 
-div#projects div.list-group a.list-group-item.list-group-item-action span::after {
+div.container > div > div.list-group a.list-group-item.list-group-item-action span {
+	font-size: 1.1em;
+}
+
+div.container > div > div.list-group a.list-group-item.list-group-item-action span::after {
 	content: "\a0\2014\a0";
 }
 
-div#tools p {
+div.container > div > p {
 	text-align: center;
 }
 
 hr {
 	border-color: #52a;
+}
+
+footer p {
+	display: inline-block;
 }
